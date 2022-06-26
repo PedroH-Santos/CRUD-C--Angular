@@ -1,0 +1,29 @@
+<div class="containerList">
+  <div class="titleProduct">
+      <h2> {{product?.name}}</h2>
+  </div>
+  <div class="divButtonInsert">
+    <a  routerLink="/products" class="buttonInsert"> Voltar </a>
+</div>
+
+  <div class="containerTable">
+      <div class="row">
+        <div class="DetailImage">
+            <img src="https://localhost:7251/Images/{{product?.image}}"/>
+        </div>
+        <div class="DetailContainer">
+          <div class="DetailDescription">
+          <p> {{product?.description}}</p>
+         </div>
+         <div class="DetailInformations">
+            <p> Quantidade: {{product?.quantity}}</p>
+            <p> Status: {{product?.status}}</p>
+            <p> Preço: R$ {{product?.quantity}}</p>
+
+        </div>
+
+
+      </div>
+      </div>
+  </div>
+</div>

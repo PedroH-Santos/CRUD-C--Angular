@@ -1,0 +1,40 @@
+<div class="containerList">
+  <div class="titleProduct">
+    <h2> Cadastrar Produto </h2>
+  </div>
+  <div class="divButtonInsert">
+    <a routerLink="/list" class="buttonInsert"> Voltar </a>
+  </div>
+
+  <div class="containerForm">
+
+    <form (ngSubmit)="insertProduct()"  [formGroup]="form">
+      <div class="row">
+        <label for="name">Nome </label>
+        <input type="text" id="name" formControlName="name" class="inputForm" />
+        <label for="quantity">Quantidade </label>
+        <input type="number" id="quantity" formControlName="quantity" class="inputForm" />
+        <label for="status"> Status </label>
+        <select id="status" formControlName="status" class="inputForm">
+          <option value="true"> Ativo </option>
+          <option value="false"> Inativo </option>
+        </select>
+        <label for="price">Preço </label>
+        <input type="number" id="price" formControlName="price" class="inputForm" />
+      </div>
+
+      <div class="row">
+        <label for="description"> Descrição </label>
+        <textarea id="description" formControlName="description" class="inputForm"> </textarea>
+
+      </div>
+      <div class="row">
+        <label for="image" class="labelFormFile">Imagem </label>
+        <input type="file" id="image" formControlName="image" class="inputFormFile" (change)="uploadFile($event)" />
+      </div>
+      <button type="submit" class="buttonInsert">Cadastrar</button>
+
+    </form>
+    <p class="success"> {{message}}</p>
+  </div>
+</div>

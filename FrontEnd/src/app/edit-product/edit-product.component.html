@@ -1,0 +1,42 @@
+<div class="containerList">
+  <div class="titleProduct">
+    <h2> Editar Produto </h2>
+  </div>
+  <div class="divButtonInsert">
+    <a routerLink="/list" class="buttonInsert"> Voltar </a>
+  </div>
+
+  <div class="containerForm">
+
+    <form (ngSubmit)="updateProduct()"  [formGroup]="form">
+      <div class="row">
+        <input type="text" id="id" formControlName="id" class="hidden" value="{{product?.id}}" />
+        <label for="name">Nome </label>
+        <input type="text" id="name" formControlName="name" class="inputForm" value="{{product?.name}}" />
+        <label for="quantity">Quantidade </label>
+        <input type="number" id="quantity" formControlName="quantity" class="inputForm" value="{{product?.quantity}}" />
+        <label for="status"> Status </label>
+        <select id="status" formControlName="status" class="inputForm"  value="{{product?.status}}">
+          <option value="true"> Ativo </option>
+          <option value="false"> Inativo </option>
+        </select>
+        <label for="price">Preço </label>
+        <input type="number" id="price" formControlName="price" class="inputForm"  value="{{product?.price}}"  />
+      </div>
+
+      <div class="row">
+        <label for="description"> Descrição </label>
+        <textarea id="description" formControlName="description" class="inputForm" value="{{product?.description}}"> </textarea>
+
+      </div>
+      <div class="row">
+        <label for="image" class="labelFormFile">Imagem </label>
+        <input type="file" id="image" formControlName="image" class="inputFormFile" (change)="uploadFile($event)" />
+      </div>
+      <button type="submit" class="buttonInsert">Alterar</button>
+
+    </form>
+    <p class="success"> {{message}}</p>
+
+  </div>
+</div>
